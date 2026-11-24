@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE GREEN | 골프 모임 홈페이지</title>
+    <title>THE GREEN | NVIDIA 스타일 골프 모임 홈페이지</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Noto Sans KR & Playfair Display -->
+    <!-- Google Fonts: Inter & Noto Sans KR (강인하고 모던한 산세리프) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Noto Sans KR"', 'Inter', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', '"Noto Sans KR"', 'sans-serif'],
                     },
                     colors: {
-                        fairway: {
-                            50: '#f2f7f4',
-                            100: '#dfede5',
-                            200: '#c0dbcc',
-                            600: '#246b4c',
-                            800: '#144530',
-                            900: '#0d3122',
-                            950: '#071d14',
-                        },
-                        gold: {
-                            400: '#d4af37',
-                            500: '#b89428',
-                            600: '#997a1f',
+                        nv: {
+                            green: '#76B900',
+                            greenHover: '#86D100',
+                            greenDark: '#5A8F00',
+                            black: '#000000',
+                            surface: '#111111',
+                            card: '#1A1A1A',
+                            border: '#2B2B2B',
+                            muted: '#999999',
                         }
                     }
                 }
@@ -39,45 +34,45 @@
         }
     </script>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-fairway-800 selection:text-white">
+<body class="bg-nv-black text-white font-sans antialiased selection:bg-nv-green selection:text-black">
 
-    <!-- ==================== 상단 네비게이션 바 ==================== -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200/80">
+    <!-- ==================== 상단 네비게이션 바 (NVIDIA 스타일) ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-nv-black/95 backdrop-blur-md border-b border-nv-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 md:h-20">
+            <div class="flex items-center justify-between h-16">
                 <!-- 로고 -->
-                <a href="#home" class="flex items-center gap-2.5 group">
-                    <div class="w-10 h-10 rounded-xl bg-fairway-900 text-gold-400 flex items-center justify-center shadow-sm group-hover:bg-fairway-800 transition">
-                        <!-- 골프 깃발 SVG 아이콘 -->
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded bg-nv-green text-black flex items-center justify-center shadow-sm group-hover:bg-nv-greenHover transition">
+                        <!-- 골프 깃발 아이콘 -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 21h16M7 21V4l10 4-10 4" />
                         </svg>
                     </div>
-                    <div class="flex flex-col">
-                        <span class="font-serif font-bold text-lg tracking-wider text-fairway-950 leading-none">김성남 골프 모임 포털</span>
-                        <span class="text-[11px] font-medium text-stone-500 tracking-tight mt-0.5">프리미엄 친목 골프 모임</span>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-extrabold text-xl tracking-tight text-white uppercase">THE GREEN</span>
+                        <span class="hidden sm:inline-block text-[11px] font-bold tracking-widest uppercase text-nv-green">GOLF CLUB</span>
                     </div>
                 </a>
 
                 <!-- 데스크톱 메뉴 -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
-                    <a href="#about" class="hover:text-fairway-800 transition py-2">모임 소개</a>
-                    <a href="#schedule" class="hover:text-fairway-800 transition py-2">라운딩 일정</a>
-                    <a href="#leaderboard" class="hover:text-fairway-800 transition py-2">스코어 & 랭킹</a>
-                    <a href="#gallery" class="hover:text-fairway-800 transition py-2">갤러리</a>
-                    <a href="#join" class="hover:text-fairway-800 transition py-2">가입 문의</a>
+                <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-zinc-300">
+                    <a href="#about" class="hover:text-white hover:underline decoration-nv-green decoration-2 underline-offset-8 transition py-2">모임 소개</a>
+                    <a href="#schedule" class="hover:text-white hover:underline decoration-nv-green decoration-2 underline-offset-8 transition py-2">라운딩 일정</a>
+                    <a href="#leaderboard" class="hover:text-white hover:underline decoration-nv-green decoration-2 underline-offset-8 transition py-2">스코어 &amp; 랭킹</a>
+                    <a href="#gallery" class="hover:text-white hover:underline decoration-nv-green decoration-2 underline-offset-8 transition py-2">갤러리</a>
+                    <a href="#join" class="hover:text-white hover:underline decoration-nv-green decoration-2 underline-offset-8 transition py-2">가입 문의</a>
                 </nav>
 
                 <!-- 우측 액션 버튼 & 모바일 메뉴 버튼 -->
                 <div class="flex items-center gap-3">
-                    <a href="#schedule" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-fairway-900 text-white text-sm font-medium hover:bg-fairway-800 transition shadow-sm">
+                    <a href="#schedule" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-sm bg-nv-green text-black text-sm font-extrabold hover:bg-nv-greenHover transition">
                         <span>라운딩 신청</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                     </a>
                     <!-- 모바일 햄버거 버튼 -->
-                    <button id="mobile-menu-btn" type="button" aria-label="메뉴 열기" class="md:hidden p-2.5 rounded-xl text-stone-700 hover:bg-stone-100 transition">
+                    <button id="mobile-menu-btn" type="button" aria-label="메뉴 열기" class="md:hidden p-2.5 rounded-sm text-zinc-300 hover:bg-nv-card hover:text-white transition">
                         <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -90,164 +85,177 @@
         </div>
 
         <!-- 모바일 드롭다운 메뉴 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-100 px-4 pt-2 pb-5 space-y-1 shadow-lg">
-            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-fairway-50 hover:text-fairway-900">모임 소개</a>
-            <a href="#schedule" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-fairway-50 hover:text-fairway-900">라운딩 일정</a>
-            <a href="#leaderboard" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-fairway-50 hover:text-fairway-900">스코어 & 랭킹</a>
-            <a href="#gallery" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-fairway-50 hover:text-fairway-900">갤러리</a>
-            <a href="#join" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-fairway-50 hover:text-fairway-900">가입 문의</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-nv-surface border-t border-nv-border px-4 pt-2 pb-5 space-y-1">
+            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-sm text-base font-semibold text-zinc-200 hover:bg-nv-card hover:text-nv-green">모임 소개</a>
+            <a href="#schedule" class="mobile-nav-link block px-4 py-3 rounded-sm text-base font-semibold text-zinc-200 hover:bg-nv-card hover:text-nv-green">라운딩 일정</a>
+            <a href="#leaderboard" class="mobile-nav-link block px-4 py-3 rounded-sm text-base font-semibold text-zinc-200 hover:bg-nv-card hover:text-nv-green">스코어 &amp; 랭킹</a>
+            <a href="#gallery" class="mobile-nav-link block px-4 py-3 rounded-sm text-base font-semibold text-zinc-200 hover:bg-nv-card hover:text-nv-green">갤러리</a>
+            <a href="#join" class="mobile-nav-link block px-4 py-3 rounded-sm text-base font-semibold text-zinc-200 hover:bg-nv-card hover:text-nv-green">가입 문의</a>
         </div>
     </header>
 
-    <!-- ==================== 히어로 섹션 ==================== -->
-    <section id="home" class="relative pt-24 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-fairway-950 text-white">
-        <!-- 배경 이미지 및 그라데이션 오버레이 -->
+    <!-- ==================== 히어로 섹션 (강렬한 다크 배너 + 네온 그린 포인트) ==================== -->
+    <section id="home" class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-nv-black border-b border-nv-border">
+        <!-- 배경 이미지 및 NVIDIA 스타일 좌측 페이드 그라데이션 -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1920&q=80"
-                 onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/0d3122/d4af37?text=THE+GREEN+GOLF+CLUB';"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/000000/76B900?text=THE+GREEN+GOLF+CLUB';"
                  alt="푸른 골프장 페어웨이 전경"
-                 class="w-full h-full object-cover opacity-35 scale-105">
-            <div class="absolute inset-0 bg-gradient-to-b from-fairway-950/80 via-fairway-950/60 to-fairway-950"></div>
+                 class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-gold-400 text-xs sm:text-sm font-medium mb-6">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>2026 시즌 멤버 모집 및 정기 라운딩 진행 중</span>
+                <div class="inline-flex items-center gap-2 text-nv-green text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-4">
+                    <span class="w-2.5 h-2.5 rounded-sm bg-nv-green"></span>
+                    <span>2026 SEASON LIVE · PREMIUM GOLF COMMUNITY</span>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
-                    푸른 필드 위,<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-white to-gold-400">
-                        좋은 사람들과의 완벽한 티오프
-                    </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white mb-6">
+                    필드 위의 퍼포먼스,<br>
+                    <span class="text-nv-green">완벽한 티오프</span>를 경험하다
                 </h1>
 
-                <p class="text-stone-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-                    스코어보다 매너를, 경쟁보다 즐거움을 추구하는 골프 모임 <strong class="text-white font-semibold">THE GREEN</strong>입니다.
-                    매월 정기 라운딩부터 분기별 제주·강원 원정까지, 우리의 모든 굿샷을 이곳에 기록합니다.
+                <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-9 max-w-2xl font-normal">
+                    스코어보다 매너를, 경쟁보다 즐거움을 추구하는 프리미엄 골프 모임 <strong class="text-white font-bold">THE GREEN</strong>.
+                    매월 수도권 정기 라운딩부터 분기별 제주·강원 원정까지, 우리의 모든 굿샷 데이터를 기록합니다.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-3.5">
-                    <a href="#schedule" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gold-400 text-fairway-950 font-bold text-base hover:bg-amber-300 transition shadow-lg shadow-black/20">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#schedule" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-nv-green text-black font-extrabold text-base hover:bg-nv-greenHover transition">
                         <span>이번 달 라운딩 보기</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="#join" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium text-base hover:bg-white/20 transition">
+                    <a href="#join" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm bg-transparent border-2 border-nv-green text-white font-bold text-base hover:bg-nv-green/10 transition">
                         <span>신규 멤버 가입 신청</span>
                     </a>
                 </div>
             </div>
 
-            <!-- 하단 핵심 지표 카드 -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 pt-8 border-t border-white/10">
-                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p class="text-xs sm:text-sm text-stone-400 mb-1">활동 멤버</p>
-                    <p class="text-2xl sm:text-3xl font-bold text-white">24<span class="text-sm font-normal text-gold-400 ml-1">명</span></p>
+            <!-- 하단 핵심 지표 바 (NVIDIA 히어로 하단 탭 인디케이터 스타일) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 pt-8">
+                <div class="p-5 rounded-sm bg-nv-surface/90 border-t-2 border-nv-green border-x border-b border-x-nv-border border-b-nv-border">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1.5">활동 멤버</p>
+                    <p class="text-3xl font-black text-white">24<span class="text-sm font-bold text-nv-green ml-1">명</span></p>
                 </div>
-                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p class="text-xs sm:text-sm text-stone-400 mb-1">누적 라운딩</p>
-                    <p class="text-2xl sm:text-3xl font-bold text-white">68<span class="text-sm font-normal text-gold-400 ml-1">회</span></p>
+                <div class="p-5 rounded-sm bg-nv-surface/90 border-t-2 border-zinc-700 hover:border-t-nv-green border-x border-b border-x-nv-border border-b-nv-border transition">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1.5">누적 라운딩</p>
+                    <p class="text-3xl font-black text-white">68<span class="text-sm font-bold text-nv-green ml-1">회</span></p>
                 </div>
-                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p class="text-xs sm:text-sm text-stone-400 mb-1">모임 평균 타수</p>
-                    <p class="text-2xl sm:text-3xl font-bold text-white">88.4<span class="text-sm font-normal text-gold-400 ml-1">타</span></p>
+                <div class="p-5 rounded-sm bg-nv-surface/90 border-t-2 border-zinc-700 hover:border-t-nv-green border-x border-b border-x-nv-border border-b-nv-border transition">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1.5">모임 평균 타수</p>
+                    <p class="text-3xl font-black text-white">88.4<span class="text-sm font-bold text-nv-green ml-1">타</span></p>
                 </div>
-                <div class="p-4 sm:p-5 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p class="text-xs sm:text-sm text-stone-400 mb-1">다음 정기 라운딩</p>
-                    <p id="next-dday" class="text-2xl sm:text-3xl font-bold text-emerald-300">D-12</p>
+                <div class="p-5 rounded-sm bg-nv-surface/90 border-t-2 border-zinc-700 hover:border-t-nv-green border-x border-b border-x-nv-border border-b-nv-border transition">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1.5">다음 정기 라운딩</p>
+                    <p id="next-dday" class="text-3xl font-black text-nv-green">D-12</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== 모임 소개 (About) ==================== -->
-    <section id="about" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-            <span class="font-serif text-sm font-bold tracking-widest uppercase text-fairway-600">Our Philosophy</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mt-2 mb-4">THE GREEN이 사랑받는 이유</h2>
-            <p class="text-stone-600 leading-relaxed">
-                부담 없는 분위기 속에서 실력을 키우고 오래도록 함께할 골프 동반자를 만날 수 있도록 네 가지 원칙을 지킵니다.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- 카드 1 -->
-            <div class="bg-white p-7 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-2xl bg-fairway-50 text-fairway-800 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-lg font-bold text-stone-900 mb-2">매너 우선 골프</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    싱글 골퍼부터 백돌이까지 실력에 관계없이 서로를 배려하고 응원하는 매너 플레이를 최우선으로 합니다.
+    <section id="about" class="py-20 md:py-28 bg-nv-surface border-b border-nv-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-14">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-nv-green">Our Philosophy</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-4 tracking-tight">THE GREEN의 핵심 원칙</h2>
+                <p class="text-zinc-400 text-base leading-relaxed">
+                    부담 없는 분위기 속에서 실력을 끌어올리고 오래도록 함께할 골프 동반자를 만날 수 있도록 네 가지 기준을 철저히 지킵니다.
                 </p>
             </div>
 
-            <!-- 카드 2 -->
-            <div class="bg-white p-7 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 카드 1 -->
+                <div class="group bg-nv-card p-7 rounded-sm border border-nv-border hover:border-nv-green transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 rounded-sm bg-nv-green/15 text-nv-green flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2.5 group-hover:text-nv-green transition">매너 우선 골프</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            싱글 골퍼부터 백돌이까지 실력에 관계없이 서로를 배려하고 응원하는 매너 플레이를 최우선으로 합니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-nv-border text-xs font-bold text-nv-green uppercase tracking-wider">01 / Etiquette</div>
                 </div>
-                <h3 class="text-lg font-bold text-stone-900 mb-2">월 2회 정기 라운딩</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    매월 둘째·넷째 주말 수도권 명문 구장에서 정기 라운딩을 진행하며, 평일 번개 및 스크린 모임도 활발합니다.
-                </p>
-            </div>
 
-            <!-- 카드 3 -->
-            <div class="bg-white p-7 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
+                <!-- 카드 2 -->
+                <div class="group bg-nv-card p-7 rounded-sm border border-nv-border hover:border-nv-green transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 rounded-sm bg-nv-green/15 text-nv-green flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2.5 group-hover:text-nv-green transition">월 2회 정기 라운딩</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            매월 둘째·넷째 주말 수도권 명문 구장에서 정기 라운딩을 진행하며, 평일 번개 및 스크린 모임도 활발합니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-nv-border text-xs font-bold text-nv-green uppercase tracking-wider">02 / Regular Round</div>
                 </div>
-                <h3 class="text-lg font-bold text-stone-900 mb-2">체계적인 스코어 관리</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    모든 라운딩 스코어와 핸디캡 변화를 홈페이지에 기록하며, 연말에는 신페리오 방식의 챔피언십 대회를 엽니다.
-                </p>
-            </div>
 
-            <!-- 카드 4 -->
-            <div class="bg-white p-7 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-700 flex items-center justify-center mb-5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
+                <!-- 카드 3 -->
+                <div class="group bg-nv-card p-7 rounded-sm border border-nv-border hover:border-nv-green transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 rounded-sm bg-nv-green/15 text-nv-green flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2.5 group-hover:text-nv-green transition">데이터 스코어 관리</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            모든 라운딩 스코어와 핸디캡 변화를 홈페이지에 기록하며, 연말에는 신페리오 방식의 챔피언십 대회를 엽니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-nv-border text-xs font-bold text-nv-green uppercase tracking-wider">03 / Analytics</div>
                 </div>
-                <h3 class="text-lg font-bold text-stone-900 mb-2">투명한 1/N 정산</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    그린피, 카트비, 식사비까지 모든 비용은 라운딩 직후 투명하게 공유하며, 소소한 시상품은 모임 회비로 지원합니다.
-                </p>
+
+                <!-- 카드 4 -->
+                <div class="group bg-nv-card p-7 rounded-sm border border-nv-border hover:border-nv-green transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 rounded-sm bg-nv-green/15 text-nv-green flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2.5 group-hover:text-nv-green transition">투명한 1/N 정산</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            그린피, 카트비, 식사비까지 모든 비용은 라운딩 직후 투명하게 공유하며, 소소한 시상품은 모임 회비로 지원합니다.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-nv-border text-xs font-bold text-nv-green uppercase tracking-wider">04 / Transparency</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== 라운딩 일정 (Schedule - Interactive) ==================== -->
-    <section id="schedule" class="py-20 bg-stone-100/80 border-y border-stone-200/70">
+    <section id="schedule" class="py-20 md:py-28 bg-nv-black border-b border-nv-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div>
-                    <span class="font-serif text-sm font-bold tracking-widest uppercase text-fairway-600">Rounding Schedule</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mt-2">다가오는 라운딩 일정</h2>
-                    <p class="text-stone-600 mt-2">참가 신청 버튼을 눌러 실시간으로 라운딩 참석 여부를 등록할 수 있습니다.</p>
+                    <span class="text-xs font-extrabold tracking-widest uppercase text-nv-green">Rounding Schedule</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">다가오는 라운딩 일정</h2>
+                    <p class="text-zinc-400 mt-2">참가 신청 버튼을 눌러 실시간으로 라운딩 참석 여부를 등록할 수 있습니다.</p>
                 </div>
 
                 <!-- 필터 & 일정 추가 버튼 -->
-                <div class="flex flex-wrap items-center gap-2">
-                    <div class="inline-flex p-1 rounded-xl bg-white border border-stone-200 shadow-sm">
-                        <button type="button" data-filter="all" class="schedule-filter-btn px-3.5 py-2 rounded-lg text-sm font-medium bg-fairway-900 text-white transition">전체</button>
-                        <button type="button" data-filter="open" class="schedule-filter-btn px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-stone-900 transition">모집중</button>
-                        <button type="button" data-filter="closed" class="schedule-filter-btn px-3.5 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-stone-900 transition">마감</button>
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="inline-flex p-1 rounded-sm bg-nv-card border border-nv-border">
+                        <button type="button" data-filter="all" class="schedule-filter-btn px-4 py-2 rounded-sm text-sm font-bold bg-nv-green text-black transition">전체</button>
+                        <button type="button" data-filter="open" class="schedule-filter-btn px-4 py-2 rounded-sm text-sm font-semibold text-zinc-400 hover:text-white transition">모집중</button>
+                        <button type="button" data-filter="closed" class="schedule-filter-btn px-4 py-2 rounded-sm text-sm font-semibold text-zinc-400 hover:text-white transition">마감</button>
                     </div>
-                    <button id="open-add-schedule-btn" type="button" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white border border-stone-300 text-stone-800 text-sm font-semibold hover:bg-stone-50 transition shadow-sm">
-                        <svg class="w-4 h-4 text-fairway-800" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <button id="open-add-schedule-btn" type="button" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-sm bg-nv-card border border-nv-green text-white text-sm font-bold hover:bg-nv-green hover:text-black transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                         </svg>
                         <span>일정 등록</span>
@@ -263,51 +271,53 @@
     </section>
 
     <!-- ==================== 스코어 & 랭킹 (Leaderboard - Interactive) ==================== -->
-    <section id="leaderboard" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <div>
-                <span class="font-serif text-sm font-bold tracking-widest uppercase text-fairway-600">Hall of Fame</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 mt-2">멤버 스코어보드 & 랭킹</h2>
-                <p class="text-stone-600 mt-2">최근 라운딩 결과를 반영한 멤버별 핸디캡과 베스트 스코어 기록입니다.</p>
+    <section id="leaderboard" class="py-20 md:py-28 bg-nv-surface border-b border-nv-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <span class="text-xs font-extrabold tracking-widest uppercase text-nv-green">Performance Leaderboard</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">멤버 스코어보드 &amp; 랭킹</h2>
+                    <p class="text-zinc-400 mt-2">최근 라운딩 결과를 반영한 멤버별 핸디캡과 베스트 스코어 데이터입니다.</p>
+                </div>
+                <button id="open-add-score-btn" type="button" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm bg-nv-green text-black text-sm font-extrabold hover:bg-nv-greenHover transition self-start md:self-auto">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    <span>내 스코어 기록하기</span>
+                </button>
             </div>
-            <button id="open-add-score-btn" type="button" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-fairway-900 text-white text-sm font-semibold hover:bg-fairway-800 transition shadow-sm self-start md:self-auto">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-                <span>내 스코어 기록하기</span>
-            </button>
-        </div>
 
-        <!-- 랭킹 테이블 카드 -->
-        <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-stone-50 border-b border-stone-200 text-xs font-semibold text-stone-500 uppercase tracking-wider">
-                            <th class="py-4 px-5 w-16 text-center">순위</th>
-                            <th class="py-4 px-5">멤버</th>
-                            <th class="py-4 px-5 text-center">평균 타수</th>
-                            <th class="py-4 px-5 text-center">베스트 스코어</th>
-                            <th class="py-4 px-5 text-center">참여 횟수</th>
-                            <th class="py-4 px-5 text-right hidden sm:table-cell">최근 구장 / 기록</th>
-                        </tr>
-                    </thead>
-                    <tbody id="leaderboard-body" class="divide-y divide-stone-100 text-sm">
-                        <!-- JS로 동적 렌더링 -->
-                    </tbody>
-                </table>
+            <!-- 랭킹 테이블 카드 -->
+            <div class="bg-nv-card rounded-sm border border-nv-border overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-nv-black border-b border-nv-border text-xs font-extrabold text-zinc-400 uppercase tracking-wider">
+                                <th class="py-4 px-5 w-20 text-center">순위</th>
+                                <th class="py-4 px-5">멤버</th>
+                                <th class="py-4 px-5 text-center">평균 타수</th>
+                                <th class="py-4 px-5 text-center">베스트 스코어</th>
+                                <th class="py-4 px-5 text-center">참여 횟수</th>
+                                <th class="py-4 px-5 text-right hidden sm:table-cell">최근 구장 / 기록</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body" class="divide-y divide-nv-border text-sm">
+                            <!-- JS로 동적 렌더링 -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== 포토 갤러리 (Gallery - Lightbox) ==================== -->
-    <section id="gallery" class="py-20 bg-fairway-950 text-white">
+    <section id="gallery" class="py-20 md:py-28 bg-nv-black border-b border-nv-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                 <div>
-                    <span class="font-serif text-sm font-bold tracking-widest uppercase text-gold-400">Memories</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold mt-2">필드의 순간들</h2>
-                    <p class="text-stone-400 mt-2">사진을 클릭하면 크게 감상할 수 있습니다.</p>
+                    <span class="text-xs font-extrabold tracking-widest uppercase text-nv-green">Visual Archive</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 tracking-tight">필드의 순간들</h2>
+                    <p class="text-zinc-400 mt-2">사진을 클릭하면 고해상도 라이트박스로 감상할 수 있습니다.</p>
                 </div>
             </div>
 
@@ -318,167 +328,169 @@
     </section>
 
     <!-- ==================== 가입 신청 & 문의 (Join Form) ==================== -->
-    <section id="join" class="py-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl border border-stone-200/80 shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-5">
-            <!-- 좌측 안내 영역 -->
-            <div class="lg:col-span-2 bg-fairway-900 text-white p-8 sm:p-10 flex flex-col justify-between">
-                <div>
-                    <span class="font-serif text-xs font-bold tracking-widest uppercase text-gold-400">Join The Club</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold mt-2 mb-4">함께 라운딩 하실래요?</h2>
-                    <p class="text-stone-300 text-sm leading-relaxed mb-8">
-                        신규 멤버 및 게스트 라운딩 신청을 언제든 환영합니다. 신청서를 남겨주시면 운영진이 확인 후 24시간 내에 연락드립니다.
-                    </p>
-
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-gold-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-white">주요 활동 지역</p>
-                                <p class="text-stone-300 text-xs mt-0.5">서울·경기 수도권 (용인, 이천, 여주, 파주 등)</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-gold-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-white">연회비 안내</p>
-                                <p class="text-stone-300 text-xs mt-0.5">연 10만원 (전액 정기 대회 시상품 및 기념품 사용)</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0 text-gold-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-white">운영진 연락처</p>
-                                <p class="text-stone-300 text-xs mt-0.5">manager@thegreen-golf.kr</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-10 pt-6 border-t border-white/10 text-xs text-stone-400">
-                    * 첫 라운딩은 게스트로 가볍게 참여해보신 후 정회원 가입을 결정하실 수 있습니다.
-                </div>
-            </div>
-
-            <!-- 우측 신청 폼 -->
-            <div class="lg:col-span-3 p-8 sm:p-10">
-                <form id="join-form" class="space-y-5">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label for="join-name" class="block text-sm font-medium text-stone-700 mb-1.5">이름 (닉네임) *</label>
-                            <input type="text" id="join-name" required placeholder="예: 김민수"
-                                   class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-fairway-600 focus:border-fairway-600 outline-none transition text-sm">
-                        </div>
-                        <div>
-                            <label for="join-phone" class="block text-sm font-medium text-stone-700 mb-1.5">연락처 *</label>
-                            <input type="tel" id="join-phone" required placeholder="010-0000-0000"
-                                   class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-fairway-600 focus:border-fairway-600 outline-none transition text-sm">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label for="join-exp" class="block text-sm font-medium text-stone-700 mb-1.5">골프 구력</label>
-                            <select id="join-exp" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-fairway-600 focus:border-fairway-600 outline-none transition text-sm bg-white">
-                                <option value="1년 미만">1년 미만 (입문)</option>
-                                <option value="1~3년">1~3년</option>
-                                <option value="3~5년" selected>3~5년</option>
-                                <option value="5년 이상">5년 이상</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="join-score" class="block text-sm font-medium text-stone-700 mb-1.5">평균 타수</label>
-                            <select id="join-score" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-fairway-600 focus:border-fairway-600 outline-none transition text-sm bg-white">
-                                <option value="70대 (싱글)">70대 (싱글)</option>
-                                <option value="80대">80대</option>
-                                <option value="90대" selected>90대</option>
-                                <option value="100타 이상">100타 이상 (명랑 골프)</option>
-                            </select>
-                        </div>
-                    </div>
-
+    <section id="join" class="py-20 md:py-28 bg-nv-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-nv-card rounded-sm border border-nv-border overflow-hidden grid grid-cols-1 lg:grid-cols-5">
+                <!-- 좌측 안내 영역 -->
+                <div class="lg:col-span-2 bg-nv-black text-white p-8 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-nv-border">
                     <div>
-                        <label for="join-msg" class="block text-sm font-medium text-stone-700 mb-1.5">간단한 자기소개 및 바라는 점</label>
-                        <textarea id="join-msg" rows="4" placeholder="선호하시는 요일이나 라운딩 스타일을 편하게 적어주세요."
-                                  class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-fairway-600 focus:border-fairway-600 outline-none transition text-sm resize-none"></textarea>
+                        <span class="text-xs font-extrabold tracking-widest uppercase text-nv-green">Join The Club</span>
+                        <h2 class="text-2xl sm:text-3xl font-black mt-2 mb-4 tracking-tight">함께 라운딩 하실래요?</h2>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                            신규 멤버 및 게스트 라운딩 신청을 언제든 환영합니다. 신청서를 남겨주시면 운영진이 확인 후 24시간 내에 연락드립니다.
+                        </p>
+
+                        <div class="space-y-5 text-sm">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-sm bg-nv-green/15 border border-nv-green/30 flex items-center justify-center shrink-0 text-nv-green">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">주요 활동 지역</p>
+                                    <p class="text-zinc-400 text-xs mt-1">서울·경기 수도권 (용인, 이천, 여주, 파주 등)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-sm bg-nv-green/15 border border-nv-green/30 flex items-center justify-center shrink-0 text-nv-green">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">연회비 안내</p>
+                                    <p class="text-zinc-400 text-xs mt-1">연 10만원 (전액 정기 대회 시상품 및 기념품 사용)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-sm bg-nv-green/15 border border-nv-green/30 flex items-center justify-center shrink-0 text-nv-green">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">운영진 연락처</p>
+                                    <p class="text-zinc-400 text-xs mt-1">manager@thegreen-golf.kr</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-fairway-900 text-white font-bold text-sm hover:bg-fairway-800 transition shadow-md">
-                        가입 / 게스트 라운딩 신청하기
-                    </button>
-                </form>
+                    <div class="mt-10 pt-6 border-t border-nv-border text-xs text-zinc-500">
+                        * 첫 라운딩은 게스트로 가볍게 참여해보신 후 정회원 가입을 결정하실 수 있습니다.
+                    </div>
+                </div>
+
+                <!-- 우측 신청 폼 -->
+                <div class="lg:col-span-3 p-8 sm:p-10">
+                    <form id="join-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="join-name" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">이름 (닉네임) *</label>
+                                <input type="text" id="join-name" required placeholder="예: 김민수"
+                                       class="w-full px-4 py-3 rounded-sm bg-nv-black border border-nv-border text-white placeholder-zinc-500 focus:ring-1 focus:ring-nv-green focus:border-nv-green outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label for="join-phone" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">연락처 *</label>
+                                <input type="tel" id="join-phone" required placeholder="010-0000-0000"
+                                       class="w-full px-4 py-3 rounded-sm bg-nv-black border border-nv-border text-white placeholder-zinc-500 focus:ring-1 focus:ring-nv-green focus:border-nv-green outline-none transition text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="join-exp" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">골프 구력</label>
+                                <select id="join-exp" class="w-full px-4 py-3 rounded-sm bg-nv-black border border-nv-border text-white focus:ring-1 focus:ring-nv-green focus:border-nv-green outline-none transition text-sm">
+                                    <option value="1년 미만">1년 미만 (입문)</option>
+                                    <option value="1~3년">1~3년</option>
+                                    <option value="3~5년" selected>3~5년</option>
+                                    <option value="5년 이상">5년 이상</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="join-score" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">평균 타수</label>
+                                <select id="join-score" class="w-full px-4 py-3 rounded-sm bg-nv-black border border-nv-border text-white focus:ring-1 focus:ring-nv-green focus:border-nv-green outline-none transition text-sm">
+                                    <option value="70대 (싱글)">70대 (싱글)</option>
+                                    <option value="80대">80대</option>
+                                    <option value="90대" selected>90대</option>
+                                    <option value="100타 이상">100타 이상 (명랑 골프)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="join-msg" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">간단한 자기소개 및 바라는 점</label>
+                            <textarea id="join-msg" rows="4" placeholder="선호하시는 요일이나 라운딩 스타일을 편하게 적어주세요."
+                                      class="w-full px-4 py-3 rounded-sm bg-nv-black border border-nv-border text-white placeholder-zinc-500 focus:ring-1 focus:ring-nv-green focus:border-nv-green outline-none transition text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-sm bg-nv-green text-black font-extrabold text-sm hover:bg-nv-greenHover transition">
+                            가입 / 게스트 라운딩 신청하기
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 푸터 ==================== -->
-    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+    <!-- ==================== 푸터 (NVIDIA 미니멀 다크 푸터) ==================== -->
+    <footer class="bg-nv-black text-zinc-400 py-12 border-t border-nv-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-fairway-800 text-gold-400 flex items-center justify-center">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <div class="w-7 h-7 rounded-sm bg-nv-green text-black flex items-center justify-center">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 21h16M7 21V4l10 4-10 4" />
                     </svg>
                 </div>
-                <span class="font-serif font-bold text-white tracking-wider">THE GREEN</span>
+                <span class="font-extrabold text-white tracking-tight uppercase">THE GREEN</span>
             </div>
-            <p class="text-xs text-stone-500 text-center md:text-left">
-                &copy; 2026 THE GREEN Golf Club. 모든 멤버의 즐거운 라운딩과 싱글 달성을 응원합니다.
+            <p class="text-xs text-zinc-500 text-center md:text-left">
+                &copy; 2026 THE GREEN Golf Club. All Rights Reserved.
             </p>
-            <div class="flex items-center gap-5 text-xs">
-                <a href="#about" class="hover:text-white transition">모임 소개</a>
-                <a href="#schedule" class="hover:text-white transition">일정</a>
-                <a href="#leaderboard" class="hover:text-white transition">스코어보드</a>
+            <div class="flex items-center gap-6 text-xs font-semibold">
+                <a href="#about" class="hover:text-nv-green transition">모임 소개</a>
+                <a href="#schedule" class="hover:text-nv-green transition">일정</a>
+                <a href="#leaderboard" class="hover:text-nv-green transition">스코어보드</a>
             </div>
         </div>
     </footer>
 
     <!-- ==================== 모달 1: 새 라운딩 일정 등록 ==================== -->
-    <div id="schedule-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
-            <div class="flex items-center justify-between mb-5">
-                <h3 class="text-xl font-bold text-stone-900">새 라운딩 일정 등록</h3>
-                <button type="button" data-close-modal="schedule-modal" class="p-2 rounded-xl text-stone-400 hover:bg-stone-100 hover:text-stone-700">
+    <div id="schedule-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-nv-card border border-nv-border rounded-sm max-w-md w-full p-6 sm:p-7 shadow-2xl">
+            <div class="flex items-center justify-between mb-5 pb-3 border-b border-nv-border">
+                <h3 class="text-lg font-black text-white">새 라운딩 일정 등록</h3>
+                <button type="button" data-close-modal="schedule-modal" class="p-1.5 rounded-sm text-zinc-400 hover:bg-nv-black hover:text-white transition">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
             <form id="add-schedule-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-stone-600 mb-1">골프장 이름 *</label>
-                    <input type="text" id="new-course" required placeholder="예: 페럼클럽 CC" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                    <label class="block text-xs font-bold text-zinc-300 mb-1.5">골프장 이름 *</label>
+                    <input type="text" id="new-course" required placeholder="예: 페럼클럽 CC" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">날짜 *</label>
-                        <input type="date" id="new-date" required class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">날짜 *</label>
+                        <input type="date" id="new-date" required class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">티오프 시간 *</label>
-                        <input type="time" id="new-time" required value="07:30" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">티오프 시간 *</label>
+                        <input type="time" id="new-time" required value="07:30" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">그린피 (만원) *</label>
-                        <input type="number" id="new-fee" required value="22" min="5" max="100" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">그린피 (만원) *</label>
+                        <input type="number" id="new-fee" required value="22" min="5" max="100" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">모집 정원 *</label>
-                        <select id="new-max" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600 bg-white">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">모집 정원 *</label>
+                        <select id="new-max" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                             <option value="4">4명 (1팀)</option>
                             <option value="8" selected>8명 (2팀)</option>
                             <option value="12">12명 (3팀)</option>
@@ -487,10 +499,10 @@
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-stone-600 mb-1">지역 / 메모</label>
-                    <input type="text" id="new-region" placeholder="예: 경기 여주 · 1부 라운딩 후 점심 식사" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                    <label class="block text-xs font-bold text-zinc-300 mb-1.5">지역 / 메모</label>
+                    <input type="text" id="new-region" placeholder="예: 경기 여주 · 1부 라운딩 후 점심 식사" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                 </div>
-                <button type="submit" class="w-full py-3 rounded-xl bg-fairway-900 text-white font-bold text-sm hover:bg-fairway-800 transition mt-2">
+                <button type="submit" class="w-full py-3 rounded-sm bg-nv-green text-black font-extrabold text-sm hover:bg-nv-greenHover transition mt-2">
                     일정 등록하기
                 </button>
             </form>
@@ -498,30 +510,30 @@
     </div>
 
     <!-- ==================== 모달 2: 스코어 기록하기 ==================== -->
-    <div id="score-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
-            <div class="flex items-center justify-between mb-5">
-                <h3 class="text-xl font-bold text-stone-900">라운딩 스코어 기록</h3>
-                <button type="button" data-close-modal="score-modal" class="p-2 rounded-xl text-stone-400 hover:bg-stone-100 hover:text-stone-700">
+    <div id="score-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-nv-card border border-nv-border rounded-sm max-w-md w-full p-6 sm:p-7 shadow-2xl">
+            <div class="flex items-center justify-between mb-5 pb-3 border-b border-nv-border">
+                <h3 class="text-lg font-black text-white">라운딩 스코어 기록</h3>
+                <button type="button" data-close-modal="score-modal" class="p-1.5 rounded-sm text-zinc-400 hover:bg-nv-black hover:text-white transition">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
             <form id="add-score-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-stone-600 mb-1">멤버 이름 *</label>
-                    <input type="text" id="score-name" required placeholder="예: 박지훈" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                    <label class="block text-xs font-bold text-zinc-300 mb-1.5">멤버 이름 *</label>
+                    <input type="text" id="score-name" required placeholder="예: 박지훈" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">기록 타수 *</label>
-                        <input type="number" id="score-value" required min="60" max="140" placeholder="85" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">기록 타수 *</label>
+                        <input type="number" id="score-value" required min="60" max="140" placeholder="85" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-stone-600 mb-1">구장명 *</label>
-                        <input type="text" id="score-course" required placeholder="남촌 CC" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-fairway-600">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">구장명 *</label>
+                        <input type="text" id="score-course" required placeholder="남촌 CC" class="w-full px-3.5 py-2.5 rounded-sm bg-nv-black border border-nv-border text-white text-sm outline-none focus:border-nv-green">
                     </div>
                 </div>
-                <button type="submit" class="w-full py-3 rounded-xl bg-fairway-900 text-white font-bold text-sm hover:bg-fairway-800 transition mt-2">
+                <button type="submit" class="w-full py-3 rounded-sm bg-nv-green text-black font-extrabold text-sm hover:bg-nv-greenHover transition mt-2">
                     스코어보드에 반영하기
                 </button>
             </form>
@@ -529,15 +541,15 @@
     </div>
 
     <!-- ==================== 모달 3: 갤러리 라이트박스 ==================== -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4">
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
         <div class="relative max-w-4xl w-full">
-            <button type="button" data-close-modal="lightbox-modal" aria-label="닫기" class="absolute -top-12 right-0 p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition">
+            <button type="button" data-close-modal="lightbox-modal" aria-label="닫기" class="absolute -top-12 right-0 p-2 rounded-sm text-zinc-400 hover:text-nv-green transition">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <img id="lightbox-img" src="" alt="확대 사진" class="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl bg-stone-900">
+            <img id="lightbox-img" src="" alt="확대 사진" class="w-full max-h-[75vh] object-contain rounded-sm border border-nv-border bg-nv-black">
             <div class="mt-4 text-center text-white">
                 <p id="lightbox-title" class="text-lg font-bold"></p>
-                <p id="lightbox-meta" class="text-sm text-stone-400 mt-1"></p>
+                <p id="lightbox-meta" class="text-sm text-nv-green mt-1 font-medium"></p>
             </div>
         </div>
     </div>
@@ -639,10 +651,10 @@
                 if (!container) return;
 
                 const toast = document.createElement('div');
-                const bgClass = type === 'success' ? 'bg-fairway-900 text-white' : 'bg-stone-800 text-white';
-                toast.className = `${bgClass} px-5 py-3.5 rounded-2xl shadow-xl text-sm font-medium flex items-center gap-2.5 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto border border-white/10`;
+                const borderClass = type === 'success' ? 'border-nv-green' : 'border-zinc-500';
+                toast.className = `bg-nv-card text-white px-5 py-3.5 rounded-sm shadow-2xl text-sm font-semibold flex items-center gap-3 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto border-l-4 ${borderClass} border-y border-r border-nv-border`;
                 toast.innerHTML = `
-                    <span class="w-2 h-2 rounded-full ${type === 'success' ? 'bg-emerald-400' : 'bg-amber-400'}"></span>
+                    <span class="w-2 h-2 rounded-sm ${type === 'success' ? 'bg-nv-green' : 'bg-zinc-400'}"></span>
                     <span>${message}</span>
                 `;
 
@@ -657,7 +669,7 @@
                 }, 3200);
             }
 
-            // 3. 날짜 포맷팅 및 D-Day 계산
+            // 3. 날짜 포맷팅
             function formatDateKorean(dateStr) {
                 try {
                     const d = new Date(dateStr + 'T00:00:00');
@@ -668,7 +680,7 @@
                 }
             }
 
-            // 4. 라운딩 일정 렌더링
+            // 4. 라운딩 일정 렌더링 (NVIDIA 다크 카드 스타일)
             function renderSchedules() {
                 const listEl = document.getElementById('schedule-list');
                 if (!listEl) return;
@@ -682,7 +694,7 @@
 
                 if (filtered.length === 0) {
                     listEl.innerHTML = `
-                        <div class="col-span-full py-12 text-center bg-white rounded-3xl border border-stone-200 text-stone-500 text-sm">
+                        <div class="col-span-full py-12 text-center bg-nv-card rounded-sm border border-nv-border text-zinc-400 text-sm">
                             해당 조건에 맞는 라운딩 일정이 없습니다.
                         </div>`;
                     return;
@@ -692,58 +704,58 @@
                     const isFull = item.current >= item.max;
                     const progress = Math.min(100, Math.round((item.current / item.max) * 100));
 
-                    let statusBadge = `<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">모집중</span>`;
+                    let statusBadge = `<span class="px-2.5 py-1 rounded-sm text-xs font-bold bg-nv-green/15 text-nv-green border border-nv-green/30">모집중</span>`;
                     if (isFull) {
-                        statusBadge = `<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-stone-200 text-stone-600">정원 마감</span>`;
+                        statusBadge = `<span class="px-2.5 py-1 rounded-sm text-xs font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">정원 마감</span>`;
                     }
 
                     let btnHtml = '';
                     if (item.joined) {
                         btnHtml = `
-                            <button type="button" data-toggle-join="${item.id}" class="w-full py-3 rounded-xl bg-stone-100 text-stone-700 font-semibold text-sm hover:bg-rose-50 hover:text-rose-700 transition border border-stone-200">
+                            <button type="button" data-toggle-join="${item.id}" class="w-full py-3 rounded-sm bg-nv-black text-nv-green font-bold text-sm hover:bg-rose-950/60 hover:text-rose-400 hover:border-rose-500/50 transition border border-nv-green/50">
                                 참가 완료 (클릭 시 취소)
                             </button>`;
                     } else if (isFull) {
                         btnHtml = `
-                            <button type="button" disabled class="w-full py-3 rounded-xl bg-stone-100 text-stone-400 font-semibold text-sm cursor-not-allowed">
+                            <button type="button" disabled class="w-full py-3 rounded-sm bg-zinc-900 text-zinc-600 font-bold text-sm cursor-not-allowed border border-zinc-800">
                                 모집이 마감되었습니다
                             </button>`;
                     } else {
                         btnHtml = `
-                            <button type="button" data-toggle-join="${item.id}" class="w-full py-3 rounded-xl bg-fairway-900 text-white font-semibold text-sm hover:bg-fairway-800 transition shadow-sm">
+                            <button type="button" data-toggle-join="${item.id}" class="w-full py-3 rounded-sm bg-nv-green text-black font-extrabold text-sm hover:bg-nv-greenHover transition">
                                 라운딩 참가 신청
                             </button>`;
                     }
 
                     return `
-                        <article class="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                        <article class="bg-nv-card rounded-sm p-6 border border-nv-border hover:border-nv-green transition duration-300 flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-2 mb-4">
-                                    <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-fairway-50 text-fairway-800">${item.tag}</span>
+                                    <span class="text-xs font-extrabold uppercase tracking-wider text-nv-green">${item.tag}</span>
                                     ${statusBadge}
                                 </div>
-                                <h3 class="text-xl font-bold text-stone-900 mb-1">${item.course}</h3>
-                                <p class="text-xs text-stone-500 mb-5">${item.region}</p>
+                                <h3 class="text-xl font-black text-white mb-1">${item.course}</h3>
+                                <p class="text-xs text-zinc-400 mb-5">${item.region}</p>
 
-                                <div class="space-y-2.5 text-sm text-stone-700 mb-6 bg-stone-50 p-4 rounded-2xl">
+                                <div class="space-y-2.5 text-sm text-zinc-300 mb-6 bg-nv-black p-4 rounded-sm border border-nv-border">
                                     <div class="flex items-center justify-between">
-                                        <span class="text-stone-500">일시</span>
-                                        <span class="font-semibold">${formatDateKorean(item.date)} ${item.time}</span>
+                                        <span class="text-zinc-500">일시</span>
+                                        <span class="font-bold text-white">${formatDateKorean(item.date)} ${item.time}</span>
                                     </div>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-stone-500">예상 그린피</span>
-                                        <span class="font-semibold text-fairway-800">${item.fee}만원</span>
+                                        <span class="text-zinc-500">예상 그린피</span>
+                                        <span class="font-bold text-nv-green">${item.fee}만원</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div>
-                                <div class="flex items-center justify-between text-xs font-medium mb-1.5">
-                                    <span class="text-stone-500">참가 현황</span>
-                                    <span class="text-stone-800 font-bold">${item.current} / ${item.max}명</span>
+                                <div class="flex items-center justify-between text-xs font-bold mb-2">
+                                    <span class="text-zinc-400">참가 현황</span>
+                                    <span class="text-white">${item.current} / ${item.max}명</span>
                                 </div>
-                                <div class="w-full h-2 bg-stone-100 rounded-full overflow-hidden mb-5">
-                                    <div class="h-full ${isFull ? 'bg-stone-400' : 'bg-fairway-600'} rounded-full transition-all duration-300" style="width: ${progress}%"></div>
+                                <div class="w-full h-1.5 bg-nv-black rounded-sm overflow-hidden mb-5">
+                                    <div class="h-full ${isFull ? 'bg-zinc-600' : 'bg-nv-green'} transition-all duration-300" style="width: ${progress}%"></div>
                                 </div>
                                 ${btnHtml}
                             </div>
@@ -761,32 +773,32 @@
 
                 tbody.innerHTML = sorted.map((m, idx) => {
                     const rank = idx + 1;
-                    let rankBadge = `<span class="font-bold text-stone-500">${rank}</span>`;
-                    if (rank === 1) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-100 text-amber-700 font-bold text-xs">1</span>`;
-                    if (rank === 2) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-stone-200 text-stone-700 font-bold text-xs">2</span>`;
-                    if (rank === 3) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-orange-100 text-orange-800 font-bold text-xs">3</span>`;
+                    let rankBadge = `<span class="font-bold text-zinc-500">${rank}</span>`;
+                    if (rank === 1) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-nv-green text-black font-black text-xs">1</span>`;
+                    if (rank === 2) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-zinc-200 text-black font-black text-xs">2</span>`;
+                    if (rank === 3) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-zinc-700 text-white font-black text-xs">3</span>`;
 
                     return `
-                        <tr class="hover:bg-fairway-50/40 transition">
+                        <tr class="hover:bg-nv-black/60 transition">
                             <td class="py-4 px-5 text-center">${rankBadge}</td>
                             <td class="py-4 px-5">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-9 h-9 rounded-full bg-fairway-900 text-white font-bold text-xs flex items-center justify-center shrink-0">
+                                    <div class="w-9 h-9 rounded-sm bg-nv-black border border-nv-border text-nv-green font-black text-xs flex items-center justify-center shrink-0">
                                         ${m.name.slice(0, 1)}
                                     </div>
                                     <div>
-                                        <p class="font-bold text-stone-900">${m.name}</p>
-                                        <p class="text-xs text-stone-500">${m.role}</p>
+                                        <p class="font-bold text-white">${m.name}</p>
+                                        <p class="text-xs text-zinc-500">${m.role}</p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="py-4 px-5 text-center font-bold text-fairway-800 text-base">${m.avg.toFixed(1)}</td>
+                            <td class="py-4 px-5 text-center font-black text-nv-green text-base">${m.avg.toFixed(1)}</td>
                             <td class="py-4 px-5 text-center">
-                                <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 font-semibold text-xs">${m.best}타</span>
+                                <span class="px-2.5 py-1 rounded-sm bg-nv-black border border-nv-border text-zinc-200 font-bold text-xs">${m.best}타</span>
                             </td>
-                            <td class="py-4 px-5 text-center text-stone-600">${m.rounds}회</td>
-                            <td class="py-4 px-5 text-right text-stone-500 hidden sm:table-cell">
-                                ${m.lastCourse} <strong class="text-stone-800 ml-1">${m.lastScore}타</strong>
+                            <td class="py-4 px-5 text-center text-zinc-400 font-medium">${m.rounds}회</td>
+                            <td class="py-4 px-5 text-right text-zinc-400 hidden sm:table-cell">
+                                ${m.lastCourse} <strong class="text-white ml-1">${m.lastScore}타</strong>
                             </td>
                         </tr>
                     `;
@@ -799,16 +811,16 @@
                 if (!grid) return;
 
                 grid.innerHTML = galleryItems.map((item, index) => `
-                    <button type="button" data-gallery-idx="${index}" class="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-900 text-left focus:outline-none focus:ring-2 focus:ring-gold-400">
+                    <button type="button" data-gallery-idx="${index}" class="group relative aspect-[4/3] rounded-sm overflow-hidden bg-nv-card border border-nv-border hover:border-nv-green text-left focus:outline-none focus:ring-2 focus:ring-nv-green transition">
                         <img src="${item.url}"
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/144530/d4af37?text=THE+GREEN+GOLF';"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/111111/76B900?text=THE+GREEN+GOLF';"
                              alt="${item.title}"
                              loading="lazy"
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-80 group-hover:opacity-95 transition"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-5">
-                            <p class="text-white font-bold text-base">${item.title}</p>
-                            <p class="text-stone-300 text-xs mt-1">${item.date}</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-transparent group-hover:border-nv-green/40">
+                            <p class="text-white font-bold text-base group-hover:text-nv-green transition">${item.title}</p>
+                            <p class="text-zinc-400 text-xs mt-1">${item.date}</p>
                         </div>
                     </button>
                 `).join('');
@@ -860,11 +872,11 @@
                     btn.addEventListener('click', () => {
                         activeFilter = btn.dataset.filter;
                         document.querySelectorAll('.schedule-filter-btn').forEach(b => {
-                            b.classList.remove('bg-fairway-900', 'text-white');
-                            b.classList.add('text-stone-600');
+                            b.classList.remove('bg-nv-green', 'text-black', 'font-bold');
+                            b.classList.add('text-zinc-400', 'font-semibold');
                         });
-                        btn.classList.add('bg-fairway-900', 'text-white');
-                        btn.classList.remove('text-stone-600');
+                        btn.classList.add('bg-nv-green', 'text-black', 'font-bold');
+                        btn.classList.remove('text-zinc-400', 'font-semibold');
                         renderSchedules();
                     });
                 });
